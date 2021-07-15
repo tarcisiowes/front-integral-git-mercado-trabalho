@@ -6,4 +6,17 @@ function getProfile(req, res) {
   return res.status(200).json({ message: "User not found!" });
 }
 
-module.exports = { getProfile };
+function getAllProfiles(req, res) {
+
+  try {
+    
+    return res.status(200).json(usersData)
+  } catch (error) {
+    
+    return res.status(400).json(error.message)
+  }
+}
+
+
+
+module.exports = { getProfile, getAllProfiles };
