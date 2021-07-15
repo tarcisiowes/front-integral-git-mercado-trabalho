@@ -20,4 +20,4 @@ exports.usersData = [
     city: 'São Paulo',
     state: 'SP'
   }
-];
+]
