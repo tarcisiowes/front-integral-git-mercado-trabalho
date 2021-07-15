@@ -1,9 +1,21 @@
-const { usersData } = require('../../data/users');
+const { usersData } = require('../../data/users')
 
 function getProfile(req, res) {
-  const { id } = req.params;
+  const { id } = req.params
 
-  return res.status(200).json({ message: "User not found!" });
+  try {
+    
+    if (!usersData[id]) {
+
+      return res.status(400).json({ message: "Usuario não encontrado!" })
+    }
+
+    return res.status(200).json(usersData[id])
+
+  } catch (error) {
+
+    return res.status(400).json(error.message)    
+  }
 }
 
-module.exports = { getProfile };
+module.exports = { getProfile }
