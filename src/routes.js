@@ -1,8 +1,9 @@
-const express = require("express");
-const user = require('./controllers/user');
+const express = require("express")
+const user = require('./controllers/user')
 
-const roteador = express();
+const roteador = express()
 
-roteador.get('/user/:id', user.getProfile);
+roteador.get('/user/:id', user.getProfile)
+roteador.get('/user', user.getAllProfiles)
 
-module.exports = roteador;
+module.exports = roteador
